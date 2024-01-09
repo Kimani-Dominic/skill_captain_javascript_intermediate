@@ -1,0 +1,115 @@
+<!--Day 5-->
+<!-- 1. Create an HTML form for user registration, including fields for name, email, password, and password confirmation.
+     2. Implement JavaScript code to handle form submission and validate the password and email inputs.-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+    
+            form {
+                width: 300px;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+    
+            label {
+                display: block;
+                margin-bottom: 8px;
+            }
+    
+            input {
+                width: 100%;
+                padding: 8px;
+                margin-bottom: 12px;
+                box-sizing: border-box;
+            }
+    
+            button {
+                background-color: #4caf50;
+                color: white;
+                padding: 10px 15px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+    
+            .error-message {
+                color: red;
+                margin-top: 8px;
+            }
+        </style>
+    
+</head>
+<body>
+    <form id="userRegistration">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required>
+
+        <button type="submit">Register</button>
+
+        <div id="status" class="status-message"></div>
+    </form>
+
+    <script>
+        const userRegistrationForm = document.getElementById('userRegistration');
+        const statusMessage = document.getElementById('status');
+
+        userRegistrationForm.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            // Form data
+            const formData = new FormData(userRegistrationForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const password = formData.get('password');
+            const confirmPassword = formData.get('confirm_password');
+
+            // Validate email format
+            if (!isValidEmail(email)) {
+                statusMessage.innerHTML = 'Please enter a valid email address.';
+                return;
+            }
+
+            // Validate password match
+            if (password !== confirmPassword) {
+                statusMessage.innerHTML = 'Passwords do not match.';
+                return;
+            }
+
+            // Display success message
+            statusMessage.innerHTML = `${name}, you've been registered successfully.`;
+
+            // Clear form fields
+            userRegistrationForm.reset();
+        });
+
+        function isValidEmail(email) {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(email);
+        }
+    </script>
+
+</body>
+</html>
