@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive List</title>
+    <style>
+        li {
+            cursor: pointer;
+            padding: 8px;
+            margin: 4px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Clickable List</h1>
+
+<ul id="myList">
+    <li>Gift 1</li>
+    <li>Gift 2</li>
+    <li>Item 3</li>s
+    <li>Item 4</li>
+</ul>
+
+<script>
+    // Get the list element
+    const myList = document.getElementById('myList');
+
+    // object storing the original content
+    const originalContent = {};
+
+    myList.addEventListener('click', function(event) {
+        if (event.target.tagName === 'LI') {
+            const clickedItem = event.target;
+
+            if (!originalContent[clickedItem.textContent]) {
+                originalContent[clickedItem.textContent] = clickedItem.textContent;
+                // Change the content of the clicked item to your modified text
+                clickedItem.textContent = "it's Day 6 of my javascript intermediate course with skill captain";
+            } else {
+                
+                clickedItem.textContent = originalContent[clickedItem.textContent];
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
