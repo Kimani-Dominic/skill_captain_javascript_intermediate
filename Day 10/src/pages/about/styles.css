@@ -1,0 +1,70 @@
+/* Add or modify styles as needed */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000000; /* White background */
+}
+
+header {
+    background-color: #37393a; /* Navbar background color */
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff; /* Navbar text color */
+    font-weight: bold;
+}
+
+.about-page {
+    text-align: center;
+    padding: 50px;
+}
+
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container {
+    max-width: 25%;
+}
+
+.image-container img {
+    max-width: 50%;
+    height: auto;
+}
+
+footer {
+    background-color: #343a40; /* Footer background color */
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+.container {
+    position: relative;
+  }
+  
+  /* Bottom right text */
+  .text-block {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: black;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  

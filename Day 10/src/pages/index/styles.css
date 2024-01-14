@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('./images/kenya2.jpeg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: rgba(58, 53, 53, 0.5); /* Semi-transparent background color for the navbar */
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-position: center;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(223, 217, 217);
+    font-weight: bold;
+}
+
+main {
+    flex: 1; /* This will make the main content area take the remaining height */
+    text-align: center;
+    padding: 20px;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background color for the footer */
+    padding: 10px;
+    color: white;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
